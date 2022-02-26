@@ -6,12 +6,12 @@ class CalculatorPage extends Page {
         this.url = pageUrl;
     }
     
-    get searchProductInput(){
-        return $('#input-0');
-    }
+    // get searchProductInput(){
+    //     return $('#input-0');
+    // }
     
     get instancesInput(){
-        return $('//*[@id="input_78"]'); //setValue (4)
+        return $('#input_78'); //setValue (4)
     }
     
     // clickOn(){
@@ -21,11 +21,11 @@ class CalculatorPage extends Page {
     // }
     
     get opsysList(){
-        return $('#input_78'); //id="select_option_80"
+        return $('#select_value_label_70'); //id="select_option_80"
     }
 
     get mnsList(){
-        return $('[id="select_value_label_71"]'); //id="select_option_93"
+        return $('#select_value_label_70'); //id="select_option_93"
     }
 
     get seriesList(){

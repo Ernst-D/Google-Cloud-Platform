@@ -32,4 +32,4 @@ class SearchPage extends Page {
     
 }
 
-export default new SearchPage();
+export default new SearchPage('/');
