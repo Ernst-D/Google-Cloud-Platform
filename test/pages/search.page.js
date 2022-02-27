@@ -23,7 +23,7 @@ class SearchPage extends Page {
 
     get cloudLink(){
         
-        return $('//*[@id="___gcse_0"]/div/div/div/div[5]/div[2]/div/div/div[1]/div[1]/div[1]/div[1]/div/a');
+       return $('//*[@id="___gcse_0"]/div/div/div/div[5]/div[2]/div/div/div[1]/div[1]/div[1]/div[1]/div/a'); //mybe use something like //a[contains(@href,'/products/calculator')]",//a[contains(@href,'/products/calculator')]/b[1]
     }
    
     open(){
