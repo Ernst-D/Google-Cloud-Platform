@@ -1,9 +1,11 @@
 
 import CalculatorPage from "../pages/calculator.page";
 import SearchPage from "../pages/search.page";
+import EmailPage from "../pages/email.page";
+
 
 describe('Search calc page',async()=>{
-    it.skip('Search',async()=>{
+    it('Search',async()=>{
         await browser.url('/');
         await SearchPage.searchBtn.click();
         await SearchPage.searchBtn.setValue('Google Cloud Pricing Calculator');
@@ -18,7 +20,7 @@ describe('Search calc page',async()=>{
 
 describe('Test',async () => {
     it('click on something',async() => {
-        await browser.url('https://cloud.google.com/products/calculator');
+       
         await $('#cloud-site > devsite-iframe > iframe').waitForDisplayed();
         await browser.switchToFrame(await $('#cloud-site > devsite-iframe > iframe'));
         await browser.switchToFrame(await $('#myFrame'));
@@ -57,19 +59,24 @@ describe('Test',async () => {
         await CalculatorPage.addBtn.click();
         await CalculatorPage.estimateEmailBtn.waitForDisplayed();
         await CalculatorPage.estimateEmailBtn.click();
-        // await CalculatorPage.emailInput.waitForDisplayed();
+    });
 
-
-
-
-        await browser.pause(10000)
-       
-       
+    it('email input and temp email',async()=>{
+        await browser.newWindow('https://tempail.com/');
+        await browser.setTimeout({ 'pageLoad': 15000 });
+        await EmailPage.tempEmailName.waitForDisplayed();
+        const inputUser = await EmailPage.tempEmailName;
+        const value = await inputUser.getValue();
+        await browser.switchWindow('/');
+        await browser.switchToFrame(await $('#cloud-site > devsite-iframe > iframe'));
+        await browser.switchToFrame(await $('#myFrame'));
+        await EmailPage.emailInput.setValue(value);
+        await EmailPage.sendEmailBtn.click();
+        // await browser.pause(5000);
+        await browser.switchWindow('Temp Mail - Temporary Email');
+        await browser.pause(10000);
+        await $("//a[contains(@href,'/mail')]").click();
         
-        // await browser.newWindow('http://google.com')
-        
-        // await browser.switchWindow('https://cloud.google.com/products/calculator');
-        
-
+        await browser.pause(30000);
     });
 });
