@@ -12,15 +12,11 @@ describe('Search calc page',async()=>{
         await browser.keys('Enter');
         await SearchPage.cloudLink.waitForDisplayed();
         await SearchPage.cloudLink.click();
-        
-        
-
     });
 });
 
 describe('Test',async () => {
-    it('click on something',async() => {
-       
+    it('filling the form',async() => {       
         await $('#cloud-site > devsite-iframe > iframe').waitForDisplayed();
         await browser.switchToFrame(await $('#cloud-site > devsite-iframe > iframe'));
         await browser.switchToFrame(await $('#myFrame'));
@@ -76,7 +72,6 @@ describe('Test',async () => {
         await browser.switchWindow('Temp Mail - Temporary Email');
         await browser.pause(10000);
         await $("//a[contains(@href,'/mail')]").click();
-        
         await browser.pause(30000);
     });
 });
