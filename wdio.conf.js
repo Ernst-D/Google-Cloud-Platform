@@ -1,6 +1,9 @@
 const fs = require("fs").promises;
 const allureReporter = require("@wdio/allure-reporter").default;
 
+/**
+ * @type {WebdriverIO.Config}
+ */
 exports.config = {
     //
     // ====================
@@ -170,6 +173,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
+        bail: true,
         timeout: process.env.WDIO_DEBUG == 1 ? 7000000 : 60000
     },
     //
