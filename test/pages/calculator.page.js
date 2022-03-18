@@ -4,52 +4,52 @@ class CalculatorPage extends Page {
        
     
     get instancesInput(){
-        return $('#input_78'); //setValue (4)
+        return $('[ng-model="listingCtrl.computeServer.quantity"]'); //setValue (4)
     }
     
    
     get opsysList(){
-        return $('#select_value_label_70'); 
+        return $('[ng-model="listingCtrl.computeServer.os"]'); 
     }
 
     get mnClassList(){
-        return $('#select_value_label_71'); 
+        return $('[ng-model="listingCtrl.computeServer.class"]'); 
     }
 
     get seriesList(){
-        return $('#select_value_label_73'); 
+        return $('[ng-model="listingCtrl.computeServer.series"]'); 
     }
 
     get mtList(){
-        return $('#select_value_label_74'); 
+        return $('[ng-model="listingCtrl.computeServer.instance"]'); 
     }
 
     get bootDiskList(){
-        return $('#select_value_label_75');
+        return $('[ng-model="listingCtrl.computeServer.bootDiskType"]');
     }
 
     get bootSizeInput(){
-        return $('#input_109'); //setValue(375)
+        return $('[ng-model="listingCtrl.computeServer.bootDiskSize"]'); //setValue(375)
     }
 
     get addGpuBtn(){
-        return $('#mainForm > div:nth-child(3) > div > md-card > md-card-content > div > div:nth-child(1) > form > div:nth-child(13) > div.layout-column.flex-gt-sm-90.flex-80 > md-input-container > md-checkbox'); //click()"
+        return $('[ng-model="listingCtrl.computeServer.addGPUs"]'); //click()"
     }
 
     get gpuTypeList(){
-        return $('#select_454'); 
+        return $('[ng-model="listingCtrl.computeServer.gpuType"]'); 
     }
     
     get numGpuList(){
-        return $('#select_value_label_453'); 
+        return $('[ng-model="listingCtrl.computeServer.gpuCount"]'); 
     }
 
     get numSsdList(){
-        return $('#select_value_label_415'); //id="select_option_442"
+        return $('[ng-model="listingCtrl.computeServer.ssd"]'); //id="select_option_442"
     }
     
     get dataLocList(){
-        return $('#select_value_label_76'); //id="select_option_239"
+        return $('[ng-model="listingCtrl.computeServer.location"]'); //id="select_option_239"
     }
 
     get commList(){

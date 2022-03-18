@@ -22,9 +22,9 @@ describe('Test',async () => {
         await browser.switchToFrame(await $('#myFrame'));
         await CalculatorPage.instancesInput.setValue(4);
         await CalculatorPage.opsysList.click();
-        await $('#select_option_80').click();
+        await $('[value="ubuntu-pro"]').click();
         await CalculatorPage.mnClassList.click();
-        await $('#select_option_93').click();
+        await (await $$('[[value="regular"]]')).shift().click();
         await CalculatorPage.seriesList.click();
         await $('#select_option_218').waitForClickable();//WTF its working????
         await $('#select_option_218').click();
