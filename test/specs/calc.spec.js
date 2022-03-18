@@ -10,12 +10,11 @@ describe('Search calc page',async()=>{
         await SearchPage.searchBtn.click();
         await SearchPage.searchBtn.setValue('Google Cloud Pricing Calculator');
         await browser.keys('Enter');
-        await SearchPage.cloudLink.waitForDisplayed();
+        await (await $('[class="gsc-expansionArea"]')).waitForDisplayed();
+        await SearchPage.cloudLink.waitForExist();
         await SearchPage.cloudLink.click();
     });
-});
 
-describe('Test',async () => {
     it('filling the form',async() => {       
         await $('#cloud-site > devsite-iframe > iframe').waitForDisplayed();
         await browser.switchToFrame(await $('#cloud-site > devsite-iframe > iframe'));
@@ -24,7 +23,7 @@ describe('Test',async () => {
         await CalculatorPage.opsysList.click();
         await $('[value="ubuntu-pro"]').click();
         await CalculatorPage.mnClassList.click();
-        await (await $$('[[value="regular"]]')).shift().click();
+        await $$('[value="regular"]')[0].click();
         await CalculatorPage.seriesList.click();
         await $('#select_option_218').waitForClickable();//WTF its working????
         await $('#select_option_218').click();

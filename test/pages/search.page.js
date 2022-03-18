@@ -22,8 +22,7 @@ class SearchPage extends Page {
     // }
 
     get cloudLink(){
-        // ernst: or you can try to use this one: $$('[data-ctorig="https://cloud.google.com/products/calculator"]')[0]  
-        return $$('[class="gs-title"]')[0]; //mybe use something like //a[contains(@href,'/products/calculator')]",//a[contains(@href,'/products/calculator')]/b[1]
+        return $$('[data-ctorig="https://cloud.google.com/products/calculator"]')[0]; //mybe use something like //a[contains(@href,'/products/calculator')]",//a[contains(@href,'/products/calculator')]/b[1]
     }
    
     open(){
