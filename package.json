@@ -18,14 +18,14 @@
     "@wdio/mocha-framework": "^7.16.15",
     "@wdio/selenium-standalone-service": "^7.16.14",
     "@wdio/spec-reporter": "^7.16.14",
-    "chromedriver": "^97.0.4",
+    "chromedriver": "^99.0.0",
     "eslint": "^8.7.0",
     "eslint-plugin-wdio": "^7.4.2",
     "wdio-chromedriver-service": "^7.2.8"
   },
   "scripts": {
     "test": "npx wdio wdio.conf.js",
-    "reports":"cd reports && allure serve"
+    "reports": "cd reports && allure serve"
   },
   "keywords": [],
   "author": "",
